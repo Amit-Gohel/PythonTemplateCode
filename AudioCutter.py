@@ -12,6 +12,10 @@ def cutter(file_path, savefolder, cutsec = 10):
     # create starting and ending index
     startsec = i * 1000
     endsec = (i+int(cutsec)) * 1000
+
+    if endsec >= cutsec:
+        print("Audio file length is less then cut.")
+        return
     
     while endsec<len(song):
         # cut song into cutsec time
